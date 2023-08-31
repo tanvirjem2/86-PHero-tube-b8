@@ -18,7 +18,7 @@ const loadData = async (categoryId) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.textContent = '';
     data.data.forEach(element => {
-        // console.log(element)
+        // console.log(typeof element.others.views)
         const div = document.createElement('div');
         div.classList.add('mx-auto');
         div.innerHTML = `
@@ -31,7 +31,7 @@ const loadData = async (categoryId) => {
                 <p class="font-bold">${element.title}</p>
                 <div class="flex items-center gap-3">
                     <p class="text-sm">${element.authors[0].profile_name}</p>
-                    <img src="./fi_10629607.png" alt="">
+                    ${element.authors[0].verified ? '<img src="./fi_10629607.png" alt=""></img>' : ""}
                 </div>
                 <p class="text-sm">${element.others.views} views</p>
             </div>
