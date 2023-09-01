@@ -18,6 +18,11 @@ const loadData = async (categoryId) => {
     // console.log(data.data)
     const cardContainer = document.getElementById('card-container');
     cardContainer.textContent = '';
+
+    const cardContainer2 = document.getElementById('card-container-2');
+    cardContainer2.textContent = '';
+
+    // forEach(element => {})
     data.data.forEach(element => {
         console.log(element)
 
@@ -51,6 +56,19 @@ const loadData = async (categoryId) => {
         `
         cardContainer.appendChild(div)
     })
+
+    if (data.data == 0) {
+        // console.log('Empty');
+        const div = document.createElement('div');
+        div.classList.add('text-center');
+        div.classList.add('space-y-7')
+        div.innerHTML = `
+            <img class="mx-auto" src="./Icon.png" alt="">
+            <p class="text-3xl font-bold">Oops!! Sorry, There is no <br>
+                content here</p>
+                `
+        cardContainer2.appendChild(div)
+    }
 }
 
 // Calculate the time
@@ -73,4 +91,3 @@ const answerTheQuestion = () => {
 }
 
 loadButton();
-
