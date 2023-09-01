@@ -2,7 +2,7 @@ const loadButton = async () => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/categories`)
     const data = await res.json()
     const buttonContainer = document.getElementById('btn-container');
-    // console.log(data.data);
+    console.log(data.data);
     data.data.forEach(element => {
         const div = document.createElement('div')
         div.innerHTML = `
@@ -15,7 +15,7 @@ const loadButton = async () => {
 const loadData = async (categoryId) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
     const data = await res.json()
-    // console.log(data.data)
+    console.log(data)
     const cardContainer = document.getElementById('card-container');
     cardContainer.textContent = '';
 
@@ -24,7 +24,7 @@ const loadData = async (categoryId) => {
 
     // forEach(element => {})
     data.data.forEach(element => {
-        console.log(element)
+        // console.log(element)
 
         // convert seconds to hrs, min, sec
         const inputSeconds = parseInt(element.others.posted_date);
@@ -90,4 +90,6 @@ const answerTheQuestion = () => {
     window.location.href = 'index2.html'
 }
 
+// Call functions
 loadButton();
+loadData('1000');
