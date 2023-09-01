@@ -19,7 +19,7 @@ const loadData = async (categoryId) => {
     const cardContainer = document.getElementById('card-container');
     cardContainer.textContent = '';
     data.data.forEach(element => {
-        // console.log(element)
+        console.log(element)
 
         // convert seconds to hrs, min, sec
         const inputSeconds = parseInt(element.others.posted_date);
@@ -33,7 +33,7 @@ const loadData = async (categoryId) => {
             <img class="mb-5 rounded-lg w-[312px] h-[200px]" src=${element.thumbnail} alt="">
             <div class="absolute bottom-0 right-0 text-white pr-3 pb-2">
                 <span class="border-solid border-black border rounded-md bg-[#171717] text-xs p-1">
-                ${time.hours} hrs ${time.minutes} min ${time.seconds} sec</span>
+                ${time.hours ? time.hours : '0'} hrs ${time.minutes ? time.minutes : '0'} min ${time.seconds ? time.seconds : '0'} sec</span>
             </div>
         </div>
         <div class="flex gap-4 mt-5">

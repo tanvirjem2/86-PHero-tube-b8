@@ -11,8 +11,8 @@ function convertSecondsToTime(seconds) {
     };
 }
 
-const inputSeconds = 16278; // Change this to your desired number of seconds
+const inputSeconds = 1672656000; // Change this to your desired number of seconds
 const time = convertSecondsToTime(inputSeconds);
 
-console.log(`${inputSeconds} seconds is equal to:`);
+// console.log(`${inputSeconds} seconds is equal to:`);
 console.log(`${time.hours} hours, ${time.minutes} minutes, and ${time.seconds} seconds.`);
