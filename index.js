@@ -2,10 +2,11 @@ const loadButton = async () => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/categories`)
     const data = await res.json()
     const buttonContainer = document.getElementById('btn-container');
+    // console.log(data.data);
     data.data.forEach(element => {
         const div = document.createElement('div')
         div.innerHTML = `
-            <button onclick="loadData('${element.category_id}')" class="btn">${element.category}</button>
+            <button onclick="loadData('${element.category_id}')" class="btn hover:bg-[#FF1F3D] hover:text-white">${element.category}</button>
         `
         buttonContainer.appendChild(div)
     })
@@ -14,15 +15,27 @@ const loadButton = async () => {
 const loadData = async (categoryId) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
     const data = await res.json()
-    console.log(data.data)
+    // console.log(data.data)
     const cardContainer = document.getElementById('card-container');
     cardContainer.textContent = '';
     data.data.forEach(element => {
-        // console.log(typeof element.others.views)
+        // console.log(element)
+
+        // convert seconds to hrs, min, sec
+        const inputSeconds = parseInt(element.others.posted_date);
+        const time = convertSecondsToTime(inputSeconds);
+        // console.log(typeof inputSeconds);
+
         const div = document.createElement('div');
         div.classList.add('mx-auto');
         div.innerHTML = `
-        <img class="rounded-lg w-[312px] h-[200px]" class="mb-5" src=${element.thumbnail} alt="">
+        <div class="relative">
+            <img class="mb-5 rounded-lg w-[312px] h-[200px]" src=${element.thumbnail} alt="">
+            <div class="absolute bottom-0 right-0 text-white pr-3 pb-2">
+                <span class="border-solid border-black border rounded-md bg-[#171717] text-xs p-1">
+                ${time.hours} hrs ${time.minutes} min ${time.seconds} sec</span>
+            </div>
+        </div>
         <div class="flex gap-4 mt-5">
             <div>
                 <img class="rounded-full w-10 h-10" src=${element.authors[0].profile_picture} alt="">
@@ -40,4 +53,24 @@ const loadData = async (categoryId) => {
     })
 }
 
+// Calculate the time
+function convertSecondsToTime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const remainingSeconds = seconds % 3600;
+    const minutes = Math.floor(remainingSeconds / 60);
+    const remainingSecondsFinal = remainingSeconds % 60;
+
+    return {
+        hours: hours,
+        minutes: minutes,
+        seconds: remainingSecondsFinal
+    };
+}
+
+// Answer The Question js
+const answerTheQuestion = () => {
+    window.location.href = 'index2.html'
+}
+
 loadButton();
+
