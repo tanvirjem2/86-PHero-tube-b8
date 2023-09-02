@@ -24,8 +24,6 @@ function sortByViews() {
         return bValue - aValue
     })
 
-    console.log(fetchData);
-
     const cardContainer = document.getElementById('card-container');
     cardContainer.textContent = '';
 
@@ -47,8 +45,10 @@ function sortByViews() {
                 <div class="relative">
                     <img class="mb-5 rounded-lg w-[312px] h-[200px]" src=${element.thumbnail} alt="">
                     <div class="absolute bottom-0 right-0 text-white pr-3 pb-2">
+                        ${time.hours || time.minutes || time.seconds ? `
                         <span class="border-solid border-black border rounded-md bg-[#171717] text-xs p-1">
-                        ${time.hours ? time.hours : '0'} hrs ${time.minutes ? time.minutes : '0'} min ${time.seconds ? time.seconds : '0'} sec</span>
+                            ${time.hours ? time.hours : '0'} hrs ${time.minutes ? time.minutes : '0'} min ${time.seconds ? time.seconds : '0'} sec
+                        </span>` : ''}
                     </div>
                 </div>
                 <div class="flex gap-4 mt-5">
@@ -110,8 +110,10 @@ const loadData = async (categoryId) => {
                 <div class="relative">
                     <img class="mb-5 rounded-lg w-[312px] h-[200px]" src=${element.thumbnail} alt="">
                     <div class="absolute bottom-0 right-0 text-white pr-3 pb-2">
+                        ${time.hours || time.minutes || time.seconds ? `
                         <span class="border-solid border-black border rounded-md bg-[#171717] text-xs p-1">
-                        ${time.hours ? time.hours : '0'} hrs ${time.minutes ? time.minutes : '0'} min ${time.seconds ? time.seconds : '0'} sec</span>
+                            ${time.hours ? time.hours : '0'} hrs ${time.minutes ? time.minutes : '0'} min ${time.seconds ? time.seconds : '0'} sec
+                        </span>` : ''}
                     </div>
                 </div>
                 <div class="flex gap-4 mt-5">
