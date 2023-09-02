@@ -1,3 +1,4 @@
+let fetchData = [];
 const loadButton = async () => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/categories`)
     const data = await res.json()
@@ -14,14 +15,17 @@ const loadButton = async () => {
 }
 
 // sort function
-//  --------------- I Quit -------------
-function sortByViews(arr) {
+function sortByViews() {
 
-    arr.sort((a, b) => {
+    fetchData.sort((a, b) => {
         const aValue = parseFloat(a.others.views);
         const bValue = parseFloat(b.others.views);
         return bValue - aValue
     })
+
+    loadData(fetchData)
+
+    console.log(fetchData);
 }
 
 const loadData = async (categoryId) => {
@@ -33,6 +37,8 @@ const loadData = async (categoryId) => {
 
     const cardContainer2 = document.getElementById('card-container-2');
     cardContainer2.textContent = '';
+
+    fetchData = data.data;
 
     // Some thing is going on ...........
 
