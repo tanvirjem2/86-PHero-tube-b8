@@ -5,11 +5,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Answer The Question</title>
+
+    <!-- link tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- style -->
+    <style>
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-eb-garamond {
+            font-family: 'EB Garamond', serif;
+        }
+
+        .paragraph {
+            color: #CFCFCF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+        }
+    </style>
+
 </head>
 
 <body>
-    <h4>Discuss the scope of var, let, and const</h4>
-    <p>Answer: </p>
+    <section>
+        <div class="text-center mt-28">
+            <h1 class="text-[#414040] font-eb-garamond text-5xl font-extrabold">Questions and Answers</h1>
+            <p class="text-[#707070] font-poppins text-base font-normal lg:w-[714px] mx-auto mt-6 mb-16">Many stories
+                have changed in some way, often made more interesting with humor.</p>
+        </div>
+        <div class="flex flex-col lg:flex-row items-center justify-center w-5/6 mx-auto gap-8">
+            <div class="">
+                <div class="collapse collapse-plus bg-base-200 mb-8">
+                    <input type="radio" name="my-accordion-3" checked="checked" />
+                    <div class="collapse-title font-eb-garamond text-2xl font-extrabold">
+                        Discuss the scope of var, let, and const
+                    </div>
+                    <div class="collapse-content text-[#707070] font-poppins text-base font-normal space-y-2">
+                        <p>var declarations are <strong>globally scoped</strong> or <strong>function scoped</strong>
+                            while let and const are <strong>block scoped</strong>.</p>
+
+                        <p><strong>var</strong> variables can be <strong>updated and re-declared</strong> within its
+                            scope; let variables can be <strong>updated but not re-declared</strong>; const variables
+                            can <strong>neither be updated nor re-declared.</strong></p>
+
+                        <p>They are all hoisted to the top of their scope. But while var variables are initialized with
+                            undefined, let and const variables are not initialized.</p>
+
+                        <p>While var and let can be declared without being initialized, const must be initialized during
+                            declaration.</p>
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200 mb-8">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-eb-garamond text-2xl font-extrabold">
+                        Tell us the use cases of null and undefined
+                    </div>
+                    <div class="collapse-content text-[#707070] font-poppins text-base font-normal space-y-2">
+
+                        <p>null is a primitive type of a variable which evaluates falsy, has a typeof() of object, and
+                            is typically intentionally declared as null</p>
+
+                        <p>undefined is a primitive type of a variable which evaluates falsy, has a typeof() of
+                            undefined, and represents a variable that is declared but missing an initial value.</p>
+
+                        <p>null == undefined evaluates as true because they are loosely equal.</p>
+
+                        <p>null === undefined evaluates as false because they are not, in fact, equal.</p>
+
+                    </div>
+                </div>
+                <div class="collapse collapse-plus bg-base-200 mb-8">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-eb-garamond text-2xl font-extrabold">
+                        What do you mean by REST API?
+                    </div>
+                    <div class="collapse-content text-[#707070] font-poppins text-base font-normal space-y-2">
+                        <p>A REST API is like a bridge that allows different computer systems to talk to each other over
+                            the internet. It works like a universal language that computers understand.</p>
+
+                        <p> Imagine it as a digital messenger that helps apps and websites share information. These APIs
+                            define how requests and responses should be structured, making it easy for one system to ask
+                            for data or perform actions on another system, like fetching weather data from a weather
+                            website or posting a photo on social media. </p>
+
+                        <p> It's a way for computers to collaborate and share data seamlessly, making many of the online
+                            services and apps we use every day possible.</p>
+                    </div>
+                </div>
+            </div>
+            <img class="w-[450px]" src="./faq.png" alt="">
+        </div>
+    </section>
 </body>
 
 </html>
