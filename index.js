@@ -37,7 +37,6 @@ function sortByViews() {
             const inputSeconds = parseInt(element.others.posted_date);
             const time = convertSecondsToTime(inputSeconds);
 
-            // console.log(typeof inputSeconds);
             const div = document.createElement('div');
             div.classList.add('mx-auto');
 
@@ -93,8 +92,6 @@ const loadData = async (categoryId) => {
 
     fetchData = data.data;
 
-    // Some thing is going on ...........
-
     if (data.data.length !== 0) {
         data.data.forEach(element => {
 
@@ -102,7 +99,6 @@ const loadData = async (categoryId) => {
             const inputSeconds = parseInt(element.others.posted_date);
             const time = convertSecondsToTime(inputSeconds);
 
-            // console.log(typeof inputSeconds);
             const div = document.createElement('div');
             div.classList.add('mx-auto');
 
