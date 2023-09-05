@@ -46,7 +46,7 @@ function sortByViews() {
                     <div class="absolute bottom-0 right-0 text-white pr-3 pb-2">
                         ${time.hours || time.minutes || time.seconds ? `
                         <span class="border-solid border-black border rounded-md bg-[#171717] text-xs p-1">
-                            ${time.hours ? time.hours : '0'} hrs ${time.minutes ? time.minutes : '0'} min ${time.seconds ? time.seconds : '0'} sec
+                            ${time.hours} hrs ${time.minutes} min ${time.seconds} sec
                         </span>` : ''}
                     </div>
                 </div>
@@ -108,7 +108,7 @@ const loadData = async (categoryId) => {
                     <div class="absolute bottom-0 right-0 text-white pr-3 pb-2">
                         ${time.hours || time.minutes || time.seconds ? `
                         <span class="border-solid border-black border rounded-md bg-[#171717] text-xs p-1">
-                            ${time.hours ? time.hours : '0'} hrs ${time.minutes ? time.minutes : '0'} min ${time.seconds ? time.seconds : '0'} sec
+                            ${time.hours} hrs ${time.minutes} min ${time.seconds} sec
                         </span>` : ''}
                     </div>
                 </div>
